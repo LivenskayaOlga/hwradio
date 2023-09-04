@@ -1,9 +1,12 @@
 package ru.netology.services.hwradio.radioservise;
 
 public class Radio {
-    public int currentRadioStation;
-    public int currentVolume;
+    private int currentRadioStation;
+    private int currentVolume;
 
+    public int getCurrentRadioStation(){
+        return currentRadioStation;
+    }
     public void setCurrentRadioStation(int newCurrentRadioStation) {
         if (newCurrentRadioStation < 0) {
             return;
@@ -12,6 +15,12 @@ public class Radio {
             return;
         }
         currentRadioStation = newCurrentRadioStation;
+    }
+    public int getCurrentVolume(){
+        return currentVolume;
+    }
+    public void setCurrentVolume(int newCurrentVolume){
+        currentVolume=newCurrentVolume;
     }
 
     public void increaseVolumeByOne() { //увеличения звука на 1
@@ -31,13 +40,13 @@ public class Radio {
         }
     }
 
-    public void shouldNextRadioStation() {
+    public void nextRadioStation() {
         if (currentRadioStation < 9) {
             currentRadioStation = currentRadioStation + 1;
         } else {currentRadioStation=0;}
     }
 
-    public void shouldPrevRadioStation() {
+    public void prevRadioStation() {
         if (currentRadioStation!=9) {
             currentRadioStation=currentRadioStation-1;
         } else {currentRadioStation=8;}
