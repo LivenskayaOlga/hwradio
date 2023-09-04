@@ -117,6 +117,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldReducedVolumeIfVolume99() { //если звук 99, уменьшаем на 1
         Radio volume = new Radio();
@@ -130,6 +131,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldReducedVolumeIfVolume101() { //если звук 101, уменьшаем на 1
         Radio volume = new Radio();
@@ -156,6 +158,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void shouldSetRadioStationByTen() { //установка радиостанции номер 10
         Radio radioStation = new Radio();
@@ -168,6 +171,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void shouldSetRadioStationByNegativ() { //установка радиостанции номер -1
         Radio radioStation = new Radio();
@@ -180,99 +184,103 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
-    public void shouldNextRadioStationByZero(){ //некст: после 0й идет 1я
-        Radio radioStation= new Radio();
+    public void shouldNextRadioStationByZero() { //некст: после 0й идет 1я
+        Radio radioStation = new Radio();
 
         radioStation.setCurrentRadioStation(0);
 
         radioStation.nextRadioStation();
 
-        int expected=1;
-        int actual=radioStation.getCurrentRadioStation();
+        int expected = 1;
+        int actual = radioStation.getCurrentRadioStation();
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void shouldNextRadioStationByNine(){ //некст: после 9й идет 0я
-        Radio radioStation= new Radio();
+    public void shouldNextRadioStationByNine() { //некст: после 9й идет 0я
+        Radio radioStation = new Radio();
 
         radioStation.setCurrentRadioStation(9);
 
         radioStation.nextRadioStation();
 
-        int expected=0;
-        int actual=radioStation.getCurrentRadioStation();
+        int expected = 0;
+        int actual = radioStation.getCurrentRadioStation();
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldNextRadioStationByFive(){ //некст: после 5й идет 6я
-        Radio radioStation= new Radio();
+    public void shouldNextRadioStationByFive() { //некст: после 5й идет 6я
+        Radio radioStation = new Radio();
 
         radioStation.setCurrentRadioStation(5);
 
         radioStation.nextRadioStation();
 
-        int expected=6;
-        int actual=radioStation.getCurrentRadioStation();
+        int expected = 6;
+        int actual = radioStation.getCurrentRadioStation();
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void shouldPrevRadioStationByOne(){ //прев: после 1й будет 0я
-        Radio radioStation=new Radio();
+    public void shouldPrevRadioStationByOne() { //прев: после 1й будет 0я
+        Radio radioStation = new Radio();
 
         radioStation.setCurrentRadioStation(1);
 
         radioStation.prevRadioStation();
 
-        int expected=0;
-        int actual= radioStation.getCurrentRadioStation();
+        int expected = 0;
+        int actual = radioStation.getCurrentRadioStation();
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldPrevRadioStationByZwero(){ //прев: после 0й будет 9я
-        Radio radioStation=new Radio();
+    public void shouldPrevRadioStationByZwero() { //прев: после 0й будет 9я
+        Radio radioStation = new Radio();
 
         radioStation.setCurrentRadioStation(0);
 
         radioStation.prevRadioStation();
 
-        int expected=9;
-        int actual= radioStation.getCurrentRadioStation();
+        int expected = 9;
+        int actual = radioStation.getCurrentRadioStation();
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldPrevRadioStationByNine(){ //прев: c 9й yf 8.
-        Radio radioStation=new Radio();
+    public void shouldPrevRadioStationByNine() { //прев: c 9й yf 8.
+        Radio radioStation = new Radio();
 
         radioStation.setCurrentRadioStation(9);
 
         radioStation.prevRadioStation();
 
-        int expected=8;
-        int actual= radioStation.getCurrentRadioStation();
+        int expected = 8;
+        int actual = radioStation.getCurrentRadioStation();
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void shouldPrevRadioStationByFive(){ //прев: c 5й yf 4
-        Radio radioStation=new Radio();
+    public void shouldPrevRadioStationByFive() { //прев: c 5й yf 4
+        Radio radioStation = new Radio();
 
         radioStation.setCurrentRadioStation(5);
 
         radioStation.prevRadioStation();
 
-        int expected=4;
-        int actual= radioStation.getCurrentRadioStation();
+        int expected = 4;
+        int actual = radioStation.getCurrentRadioStation();
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 }
 
