@@ -165,7 +165,7 @@ public class RadioTest {
 
         radioStation.setCurrentRadioStation(10);
 
-        int expected = 0;
+        int expected = 9;
         int actual = radioStation.getCurrentRadioStation();
 
         Assertions.assertEquals(expected, actual);
@@ -174,7 +174,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetRadioStationByNegativ() { //установка радиостанции номер -1
-        Radio radioStation = new Radio();
+        Radio radioStation = new Radio(-1);
 
         radioStation.setCurrentRadioStation(-1);
 
@@ -282,5 +282,96 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void shouldSetDefaultAmountRadioStation() { // по умолчанию 10 станций
+        Radio radioStation = new Radio();
+
+        Assertions.assertEquals(9, radioStation.getAmountRadioStation());
+
+    }
+
+    @Test
+    public void shouldSetNegativAmountRadioStation() { // установитьотрицательное число
+        Radio radioStation = new Radio(-5);
+
+
+        Assertions.assertEquals(0, radioStation.getAmountRadioStation());
+
+    }
+
+    @Test
+    public void shouldSetAmountRadioStationByZero() { // установить 0 радиостанций
+        Radio radioStation = new Radio(0);
+
+
+        Assertions.assertEquals(0, radioStation.getAmountRadioStation());
+
+    }
+
+    @Test
+    public void shouldSetAmountRadioStationByOne() { // установить 1 радиостанций
+        Radio radioStation = new Radio(1);
+
+        Assertions.assertEquals(0, radioStation.getAmountRadioStation());
+
+    }
+
+    @Test
+    public void shouldSetAmountRadioStationByTwo() { // установить 1 радиостанций
+        Radio radioStation = new Radio(2);
+
+        Assertions.assertEquals(1, radioStation.getAmountRadioStation());
+
+    }
+
+    @Test
+    public void shouldSetAmountRadioStationByElevenSwitchNext() {
+        Radio radioStation = new Radio(11);
+
+        radioStation.setCurrentRadioStation(10);
+
+        radioStation.nextRadioStation();
+        Assertions.assertEquals(0, radioStation.getCurrentRadioStation());
+
+    }
+
+    @Test
+    public void shouldSetAmountRadioStationByTwentySwitchNext() { //
+        Radio radioStation = new Radio(20);
+
+        radioStation.setCurrentRadioStation(10);
+
+        radioStation.nextRadioStation();
+
+        Assertions.assertEquals(11, radioStation.getCurrentRadioStation());
+
+    }
+
+    @Test
+    public void shouldSetAmountRadioStationByTwentySwitchPrew() { //
+        Radio radioStation = new Radio(20);
+
+        radioStation.setCurrentRadioStation(0);
+
+        radioStation.prevRadioStation();
+
+        Assertions.assertEquals(19, radioStation.getCurrentRadioStation());
+
+    }
+
+    @Test
+    public void shouldSetAmountRadioStationSwitchPrew() { //
+        Radio radioStation = new Radio(20);
+
+        radioStation.setCurrentRadioStation(8);
+
+        radioStation.prevRadioStation();
+
+        Assertions.assertEquals(7, radioStation.getCurrentRadioStation());
+
+    }
+
+
 }
 
